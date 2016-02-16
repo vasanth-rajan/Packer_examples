@@ -1,0 +1,19 @@
+{
+  "variables": {
+    "os_username": "admin",
+    "os_password": "ADMIN_PASS"
+  },
+  "builders": [{
+    "type": "openstack",
+    "username": "{{user `os_username` }}",
+    "password": "{{user `os_password` }}",
+    "region": "regionOne",
+    "image_name": "Test image",
+    "source_image": "0d5254bf-2901-4d55-a38a-897237c2dfe7",
+    "flavor": "2",
+    "networks": ["e6e54026-8f6b-4375-918f-184ffb249fc4"],
+    "floating_ip_pool": "ext-net",
+    "ssh_username": "centos",
+    "ssh_timeout": "20m"
+}]
+}

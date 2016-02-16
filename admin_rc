@@ -1,0 +1,5 @@
+#export OS_TENANT_ID=072b7b82ee934b87aea12a3f21c55ce5
+export OS_TENANT_NAME=admin
+export OS_USERNAME=admin
+export OS_PASSWORD=ADMIN_PASS
+export OS_AUTH_URL=http://192.168.0.150:35357/v2.0

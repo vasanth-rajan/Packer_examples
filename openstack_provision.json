@@ -1,0 +1,29 @@
+{
+  "variables": {
+    "os_username": "admin",
+    "os_password": "ADMIN_PASS"
+  },
+  "builders": [{
+    "type": "openstack",
+    "username": "{{user `os_username` }}",
+    "password": "{{user `os_password` }}",
+    "region": "regionOne",
+
+    "image_name": "Test image1",
+    "source_image": "34e4b392-2159-4310-9c16-a92b920960ba",
+    "flavor": "2",
+    "networks": ["e6e54026-8f6b-4375-918f-184ffb249fc4"],
+    "floating_ip_pool": "ext-net",
+    "ssh_username": "ubuntu",
+    "ssh_timeout": "10m"
+
+}],
+  "provisioners": [{
+    "type": "shell",
+    "inline": [
+      "sleep 30",
+      "sudo apt-get update",
+      "sudo apt-get install -y redis-server"
+    ]
+  }]
+}
